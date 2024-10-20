@@ -10,7 +10,7 @@ const Section = ({ title, children }) => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
     >
-        <h2 className="text-2xl font-bold mb-4 text-gray-800 border-b pb-2">{title}</h2>
+        <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">{title}</h2>
         {children}
     </motion.section>
 );
@@ -22,7 +22,7 @@ const CodeBlock = ({ children }) => {
         try {
             await navigator.clipboard.writeText(children);
             toast.success('Copied to clipboard!');
-            setTimeout(() => setCopySuccess(''), 2000); // Reset message after 2 seconds
+            setTimeout(() => setCopySuccess(''), 2000);
         } catch (err) {
             toast.error('Failed to copy!');
         }
@@ -37,7 +37,7 @@ const CodeBlock = ({ children }) => {
             <code className="font-mono">{children}</code>
             <button
                 onClick={copyToClipboard}
-                className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 focus:outline-none"
+                className="absolute top-2 right-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-2 py-1 rounded hover:from-blue-600 hover:to-indigo-600 focus:outline-none transition-all duration-300"
             >
                 Copy
             </button>
@@ -58,8 +58,8 @@ const FeatureList = ({ features }) => (
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
             >
-                <span className="text-blue-500 mr-2">•</span>
-                <span>{feature}</span>
+                <span className="text-indigo-500 mr-2">•</span>
+                <span className="text-gray-700">{feature}</span>
             </motion.li>
         ))}
     </ul>
@@ -70,13 +70,13 @@ const StepList = ({ steps }) => (
         {steps.map((step, index) => (
             <motion.li
                 key={index}
-                className="bg-gray-50 rounded-lg p-4 shadow-sm"
+                className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 shadow-sm"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
             >
-                <h3 className="font-bold text-lg text-gray-800 mb-2">{index + 1}. {step.title}</h3>
-                <p className="text-gray-600 mb-2">{step.description}</p>
+                <h3 className="font-bold text-lg text-indigo-700 mb-2">{index + 1}. {step.title}</h3>
+                <p className="text-gray-700 mb-2">{step.description}</p>
                 {step.code && <CodeBlock>{step.code}</CodeBlock>}
             </motion.li>
         ))}
@@ -122,7 +122,7 @@ export default function Documentation() {
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
             <Toaster position="top-center" />
             <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
-                <div className="bg-blue-600 py-6 px-8">
+                <div className="bg-gradient-to-r from-blue-600 to-indigo-600 py-8 px-8">
                     <motion.h1
                         className="text-4xl font-extrabold text-white text-center"
                         initial={{ opacity: 0, y: -20 }}
@@ -134,10 +134,10 @@ export default function Documentation() {
                 </div>
                 <div className="p-8">
                     <Section title="Overview">
-                        <p className="text-gray-600 mb-4 leading-relaxed">
+                        <p className="text-gray-700 mb-4 leading-relaxed">
                             This project demonstrates how to manage inventory and create bills using an OCR-based system integrated with Flask. The app automates the process of reading product details from images, extracting text using OCR, and matching those details against a product inventory stored in an Excel file.
                         </p>
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-gray-700 leading-relaxed">
                             Manually feeding product details into a system can be time-consuming and error-prone. This project provides an automated solution to manage inventory using OCR (Optical Character Recognition) technology. By uploading product images, the app extracts text data and matches it against a pre-existing inventory, helping businesses generate bills and track inventory automatically.
                         </p>
                     </Section>
@@ -151,17 +151,17 @@ export default function Documentation() {
                     </Section>
 
                     <Section title="Using the App">
-                        <ul className="space-y-2 text-gray-600">
+                        <ul className="space-y-2 text-gray-700">
                             <li className="flex items-start">
-                                <span className="text-blue-500 mr-2">1.</span>
+                                <span className="text-indigo-500 mr-2 font-bold">1.</span>
                                 <span>Upload product images via the web interface.</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-blue-500 mr-2">2.</span>
+                                <span className="text-indigo-500 mr-2 font-bold">2.</span>
                                 <span>The app will extract text from the images using OCR and attempt to match the extracted text with products in the inventory.</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-blue-500 mr-2">3.</span>
+                                <span className="text-indigo-500 mr-2 font-bold">3.</span>
                                 <span>If a match is found, the product details will be displayed, and you can generate a bill from the selected products.</span>
                             </li>
                         </ul>

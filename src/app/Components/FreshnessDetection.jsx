@@ -19,7 +19,7 @@ const FreshnessDetection = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-green-50 to-blue-50 min-h-screen flex items-center justify-center p-5">
+    <div className="font-consolas bg-gradient-to-br from-green-50 to-blue-50 min-h-screen flex items-center justify-center p-5">
       <motion.div 
         initial="initial"
         animate="animate"

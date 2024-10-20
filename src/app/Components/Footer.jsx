@@ -50,7 +50,7 @@ function Footer() {
           transition={{ delay: 0.2, duration: 0.5 }}
         >
           <motion.p 
-            className="text-sm"
+            className="text-sm font-consolas"
             whileHover={{ scale: 1.05 }}
           >
             &copy; {currentYear} Made by{' '}
@@ -77,7 +77,7 @@ function Footer() {
             href="https://github.com/Utkarsh-Shivhare/OCR_Inventory_Management"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-600 font-consolas text-white font-bold py-2 px-4 rounded"
             whileHover={{ scale: 1.05, backgroundColor: "#2563EB" }}
             whileTap={{ scale: 0.95 }}
             onMouseMove={handleMouseMove}
@@ -96,7 +96,7 @@ function Footer() {
             href="https://github.com/Utkarsh-Shivhare/OCR_Inventory_Management/fork"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-green-600 text-white font-bold py-2 px-4 rounded"
+            className="bg-green-600 font-consolas text-white font-bold py-2 px-4 rounded"
             whileHover={{ scale: 1.05, backgroundColor: "#059669" }}
             whileTap={{ scale: 0.95 }}
             onMouseMove={handleMouseMove}

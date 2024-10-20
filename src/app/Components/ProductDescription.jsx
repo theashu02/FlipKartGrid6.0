@@ -67,7 +67,7 @@ const StepCard = ({ icon: Icon, title, description, delay }) => {
 export default function ProductDescription() {
   return (
     <motion.section 
-      className="bg-gray-50 py-12 overflow-hidden"
+      className="bg-gray-50 font-consolas py-12 overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
