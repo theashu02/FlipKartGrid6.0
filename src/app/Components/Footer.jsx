@@ -55,12 +55,12 @@ function Footer() {
           >
             &copy; {currentYear} Made by{' '}
             <motion.a 
-              href="https://github.com/Utkarsh-Shivhare/OCR_Inventory_Management" 
+              href="https://github.com/theashu02/OCR_Inventory_Management" 
               className="text-blue-400 hover:underline"
               whileHover={{ color: "#60A5FA" }}
               whileTap={{ scale: 0.95 }}
             >
-              @ashu
+              @TeamNexus
             </motion.a>
             . All rights reserved.
           </motion.p>

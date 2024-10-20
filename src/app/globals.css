@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* app/globals.css or in your component's CSS */
 body {
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
 }
