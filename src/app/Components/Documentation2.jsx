@@ -5,12 +5,12 @@ import { Toaster, toast } from 'react-hot-toast';
 
 const Section = ({ title, children }) => (
     <motion.section
-        className="mb-12 bg-white rounded-lg shadow-lg p-6 border-l-4 border-blue-500"
+        className="mb-12 bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
     >
-        <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">{title}</h2>
+        <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-teal-600">{title}</h2>
         {children}
     </motion.section>
 );
@@ -37,7 +37,7 @@ const CodeBlock = ({ children }) => {
             <code className="font-mono">{children}</code>
             <button
                 onClick={copyToClipboard}
-                className="absolute top-2 right-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-2 py-1 rounded hover:from-blue-600 hover:to-indigo-600 focus:outline-none transition-all duration-300"
+                className="absolute top-2 right-2 bg-gradient-to-r from-green-500 to-teal-500 text-white px-2 py-1 rounded hover:from-green-600 hover:to-teal-600 focus:outline-none transition-all duration-300"
             >
                 Copy
             </button>
@@ -58,7 +58,7 @@ const FeatureList = ({ features }) => (
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
             >
-                <span className="text-indigo-500 mr-2">•</span>
+                <span className="text-green-500 mr-2">•</span>
                 <span className="text-gray-700">{feature}</span>
             </motion.li>
         ))}
@@ -70,12 +70,12 @@ const StepList = ({ steps }) => (
         {steps.map((step, index) => (
             <motion.li
                 key={index}
-                className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 shadow-sm"
+                className="bg-gradient-to-r from-green-50 to-teal-50 rounded-lg p-4 shadow-sm"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
             >
-                <h3 className="font-bold text-lg text-indigo-700 mb-2">{index + 1}. {step.title}</h3>
+                <h3 className="font-bold text-lg text-green-700 mb-2">{index + 1}. {step.title}</h3>
                 <p className="text-gray-700 mb-2">{step.description}</p>
                 {step.code && <CodeBlock>{step.code}</CodeBlock>}
             </motion.li>
@@ -83,62 +83,72 @@ const StepList = ({ steps }) => (
     </ol>
 );
 
-export default function Documentation() {
+export default function Documentation2() {
     const features = [
-        "OCR Integration: Extracts text from product images.",
-        "Product Matching: Matches OCR output with product inventory using fuzzy matching and FAISS search for fast and accurate results.",
-        "Multi-Image Upload: Supports uploading multiple images for batch processing.",
-        "Flask Web Interface: Provides a simple web interface to upload images and view detected products."
+        "Real-Time Detection: Use live webcam feed to detect rotten products in real-time",
+        "Image Detection: Upload images to quickly detect rotten fruits or vegetables",
+        "YOLO Model: Leverages YOLOv8 model for object detection",
+        "Scalable: Can be expanded to include more types of produce and different detection models",
+        "Customizable: Allows for fine-tuning and deployment of different models for higher accuracy"
     ];
 
     const setupSteps = [
         {
             title: "Clone the Repository",
             description: "Open your terminal and run:",
-            code: "git clone https://github.com/Utkarsh-Shivhare/OCR_Inventory_Management.git\ncd OCR_INVENTORY_MANAGER"
+            code: "git clone https://github.com/Utkarsh-Shivhare/Freshness_detection.git\ncd Freshness_Detection"
         },
         {
-            title: "Install Python and Virtual Environment (Optional)",
+            title: "Set up Virtual Environment",
             description: "On macOS/Linux:",
             code: "python3 -m venv venv\nsource venv/bin/activate"
         },
         {
             title: "Install Dependencies",
-            description: "Install the required Python packages by running:",
+            description: "Install the required Python packages:",
             code: "pip install -r requirements.txt"
         },
         {
-            title: "Prepare the Inventory",
-            description: "Ensure your Excel file (Product_Inventory.xlsx) has the following structure: Brand, Product Name"
-        },
-        {
             title: "Run the Application",
-            description: "Start the Flask server by running:",
+            description: "Start the Flask server:",
             code: "python app.py"
         }
     ];
 
+    const usageSteps = [
+        {
+            title: "Live Feed Detection",
+            description: "For real-time detection using webcam:",
+            code: "python FreshnessDetection_live.py"
+        },
+        {
+            title: "Image Detection",
+            description: "For processing uploaded images:",
+            code: "python FreshnessDetection_image.py"
+        }
+    ];
+
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
-            <Toaster position="top-center" />
+        <div className="min-h-screen bg-[#f4f4f4] py-12 px-4 sm:px-6 lg:px-8">
+            {/* <Toaster position="top-center" /> */}
             <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
-                <div className="bg-gradient-to-r from-blue-600 to-indigo-600 py-8 px-8">
+                <div className="bg-gradient-to-r from-green-600 to-teal-600 py-8 px-8">
                     <motion.h1
                         className="text-4xl font-extrabold text-white text-center"
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        OCR Inventory Manager
+                        Freshness Detection for QuickCommerce
                     </motion.h1>
                 </div>
                 <div className="p-8">
                     <Section title="Overview">
                         <p className="text-gray-700 mb-4 leading-relaxed">
-                            This project demonstrates how to manage inventory and create bills using an OCR-based system integrated with Flask. The app automates the process of reading product details from images, extracting text using OCR, and matching those details against a product inventory stored in an Excel file.
+                            This project provides an automated solution to quickly detect and filter out rotten fruits and vegetables at the warehouse level for QuickCommerce platforms. It leverages object detection models to ensure that only fresh products are delivered to customers, preventing the delivery of spoiled or subpar produce.
                         </p>
                         <p className="text-gray-700 leading-relaxed">
-                            Manually feeding product details into a system can be time-consuming and error-prone. This project provides an automated solution to manage inventory using OCR (Optical Character Recognition) technology. By uploading product images, the app extracts text data and matches it against a pre-existing inventory, helping businesses generate bills and track inventory automatically.
+                            While the current system does not cover all types of fruits and vegetables, it can be expanded with more data and models to enhance accuracy and effectiveness. The system uses publicly available data from Roboflow for model training and refinement.
                         </p>
                     </Section>
 
@@ -146,23 +156,31 @@ export default function Documentation() {
                         <FeatureList features={features} />
                     </Section>
 
-                    <Section title="How to Set Up the Application">
+                    <Section title="Installation">
                         <StepList steps={setupSteps} />
                     </Section>
 
-                    <Section title="Using the App">
+                    <Section title="Usage">
+                        <StepList steps={usageSteps} />
+                    </Section>
+
+                    <Section title="Future Enhancements">
                         <ul className="space-y-2 text-gray-700">
                             <li className="flex items-start">
-                                <span className="text-indigo-500 mr-2 font-bold">1.</span>
-                                <span>Upload product images via the web interface.</span>
+                                <span className="text-green-500 mr-2 font-bold">•</span>
+                                <span>Expand the dataset to include more fruits and vegetables</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-indigo-500 mr-2 font-bold">2.</span>
-                                <span>The app will extract text from the images using OCR and attempt to match the extracted text with products in the inventory.</span>
+                                <span className="text-green-500 mr-2 font-bold">•</span>
+                                <span>Implement real-time data capture for model refinement</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-indigo-500 mr-2 font-bold">3.</span>
-                                <span>If a match is found, the product details will be displayed, and you can generate a bill from the selected products.</span>
+                                <span className="text-green-500 mr-2 font-bold">•</span>
+                                <span>Integrate a dashboard for visualizing detection results and generating reports</span>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-green-500 mr-2 font-bold">•</span>
+                                <span>Experiment with different models or custom-trained models for improved accuracy</span>
                             </li>
                         </ul>
                     </Section>
