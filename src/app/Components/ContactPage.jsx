@@ -97,8 +97,9 @@ const ContactPage = () => {
                     >
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
                         <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-                            Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+                            Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
                         </p>
+
                     </motion.div>
                 </div>
             </div>
@@ -148,7 +149,7 @@ const ContactPage = () => {
                             <MapPin className="w-16 h-16 text-gray-400" />
                         </div>
                     </motion.div>
-                    
+
 
 
                     {/* Form */}
