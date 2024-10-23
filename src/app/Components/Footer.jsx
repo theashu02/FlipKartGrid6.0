@@ -50,13 +50,13 @@ function Footer() {
           transition={{ delay: 0.2, duration: 0.5 }}
         >
           <motion.p 
-            className="text-sm font-consolas"
+            className="text-sm font-raleway"
             whileHover={{ scale: 1.05 }}
           >
             &copy; {currentYear} Made by{' '}
             <motion.a 
               href="https://github.com/theashu02/OCR_Inventory_Management" 
-              className="text-blue-400 hover:underline"
+              className="text-blue-400 font-raleway hover:underline"
               whileHover={{ color: "#60A5FA" }}
               whileTap={{ scale: 0.95 }}
             >

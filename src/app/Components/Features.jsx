@@ -83,7 +83,7 @@ export default function Features() {
         <section className="bg-gradient-to-b from-gray-50 to-gray-100 py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.h2 
-                    className="font-consolas text-4xl font-bold text-center mb-12 text-gray-800"
+                    className="font-raleway text-4xl font-bold text-center mb-12 text-gray-800"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}

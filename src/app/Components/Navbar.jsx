@@ -73,7 +73,7 @@ export default function Navbar() {
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold">FGR</span>
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+              <span className="font-raleway text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
                 Flipkart Grid Robotics 6.0
               </span>
             </Link>
@@ -94,7 +94,7 @@ export default function Navbar() {
                   whileTap={{ scale: 0.95 }}
                   onClick={() => handleNavigation(category)}
                 >
-                  <span>{category}</span>
+                  <span className="font-raleway">{category}</span>
                   {items.length > 0 && <ChevronDown size={16} />}
                 </motion.div>
 
@@ -149,7 +149,7 @@ export default function Navbar() {
               {Object.entries(menuItems).map(([category, items]) => (
                 <div key={category} className="py-2">
                   <div 
-                    className="font-medium text-gray-900 px-4 py-2 cursor-pointer"
+                    className="font-raleway font-medium text-gray-900 px-4 py-2 cursor-pointer"
                     onClick={() => handleNavigation(category)}
                   >
                     {category}

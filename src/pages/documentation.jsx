@@ -42,7 +42,7 @@ const DashboardLayout = () => {
 
         {/* Logo Area */}
         <div className="p-4 border-b">
-          <h1 className={`font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-indigo-600 ${
+          <h1 className={`font-bold bg-clip-text font-raleway text-transparent bg-gradient-to-r from-violet-600 to-indigo-600 ${
             isSidebarCollapsed ? 'text-lg text-center' : 'text-xl'
           }`}>
             {isSidebarCollapsed ? 'NP' : 'Nexus Product'}
@@ -74,7 +74,7 @@ const DashboardLayout = () => {
                 d="M9 4.5v15m6-15v15m-10.875 0h15.75c.621 0 1.125-.504 1.125-1.125V5.625c0-.621-.504-1.125-1.125-1.125H4.125C3.504 4.5 3 5.004 3 5.625v12.75c0 .621.504 1.125 1.125 1.125z"
               />
             </svg>
-            {!isSidebarCollapsed && <span>OCR Manager</span>}
+            {!isSidebarCollapsed && <span className='font-raleway'>OCR Manager</span>}
             {activeDoc === 'doc1' && !isSidebarCollapsed && (
               <motion.div
                 layoutId="activeIndicator"
@@ -107,7 +107,7 @@ const DashboardLayout = () => {
                 d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            {!isSidebarCollapsed && <span>Freshness Detection</span>}
+            {!isSidebarCollapsed && <span className='font-raleway'>Freshness Detection</span>}
             {activeDoc === 'doc2' && !isSidebarCollapsed && (
               <motion.div
                 layoutId="activeIndicator"

@@ -14,10 +14,10 @@ const LoadingPage = () => {
       
       {/* Loading text */}
       <div className="mt-8 space-y-2 text-center">
-        <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-800">
+        <h2 className="font-consolas text-xl font-semibold text-gray-800 dark:text-gray-800">
           Loading
         </h2>
-        <p className="text-sm text-gray-700 dark:text-gray-700">
+        <p className="font-raleway text-sm text-gray-700 dark:text-gray-700 font-semibold">
           Please wait while we prepare your experience
         </p>
       </div>

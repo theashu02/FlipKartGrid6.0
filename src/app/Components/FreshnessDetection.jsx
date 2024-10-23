@@ -27,13 +27,13 @@ const FreshnessDetection = () => {
       >
         <div className="bg-gradient-to-r from-green-400 to-blue-500 p-8 text-white">
           <motion.h1 
-            className="text-4xl md:text-5xl font-extrabold mb-4 text-center"
+            className="font-raleway text-4xl md:text-5xl font-extrabold mb-4 text-center"
             variants={fadeIn}
           >
             Advanced Freshness Detection System
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl text-center font-light"
+            className="font-raleway text-xl md:text-2xl text-center font-light"
             variants={fadeIn}
           >
             Revolutionizing produce freshness prediction with AI and open-source collaboration
