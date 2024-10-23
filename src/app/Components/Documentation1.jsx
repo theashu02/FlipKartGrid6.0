@@ -123,7 +123,7 @@ export default function Documentation1() {
             <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
                 <div className="bg-gradient-to-r from-blue-600 to-indigo-600 py-8 px-8">
                     <motion.h1
-                        className="text-4xl font-extrabold text-white text-center"
+                        className="text-4xl font-extrabold text-white text-center font-raleway"
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}

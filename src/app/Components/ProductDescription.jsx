@@ -80,7 +80,7 @@ export default function ProductDescription() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.h2 
-            className="text-4xl font-extrabold font-sticknobills text-gray-800 md:text-[70px] tracking-wider mb-4"
+            className="text-4xl font-extrabold font-raleway text-gray-800 md:text-[70px] tracking-wider mb-4"
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}

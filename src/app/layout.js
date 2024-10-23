@@ -1,4 +1,4 @@
-import './globals.css';
+import "./globals.css";
 
 export const metadata = {
   title: "FGR 6.0",
@@ -10,9 +10,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="icon" href="favicon.ico" />
-        
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Stick+No+Bills:wght@200..800&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body style={{ fontFamily: 'Stick No Bills, sans-serif' }}>
+      <body style={{ fontFamily: "Stick No Bills, sans-serif" }}>
         {children}
       </body>
     </html>

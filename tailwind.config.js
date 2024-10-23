@@ -10,6 +10,7 @@ module.exports = {
     fontFamily: {
       consolas: ['Consolas', 'Monaco', 'Courier New', 'monospace'],
       sticknobills: ['"Stick No Bills"', 'sans-serif'],
+      raleway: ['Raleway', 'sans-serif'],
     }, 
     extend: {
       colors: {
