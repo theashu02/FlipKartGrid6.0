@@ -3,8 +3,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import three from './../images/3.jpeg';
 import { useRef } from 'react';
-import { Raleway } from '@next/font/google';
-const raleway = Raleway({ subsets: ['latin'], weights: ['400', '700'] });
 
 export default function Hero() {
   const containerRef = useRef(null);

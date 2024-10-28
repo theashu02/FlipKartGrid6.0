@@ -49,6 +49,9 @@ export default function Navbar() {
     if (category === "Contact Us") {
       router.push("/ContactUs");
     }
+    if(category === "About Us"){
+      router.push("/aboutUs")
+    }
     setIsMenuOpen(false); // Close mobile menu after navigation
   };
 

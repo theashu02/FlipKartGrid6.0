@@ -1,9 +1,7 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, Send, Loader2 } from 'lucide-react';
-
-
 
 const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -13,25 +11,50 @@ const ContactPage = () => {
         message: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [showSuccess, setShowSuccess] = useState(false);
     const [activeSection, setActiveSection] = useState(null);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        setIsSubmitting(false);
-        setShowSuccess(true);
-        setFormData({ name: '', email: '', subject: '', message: '' });
-    };
-
+    // Handle input change
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
             [name]: value
         }));
+    };
+
+    // Handle form submission
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        const submissionData = {
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+        };
+
+        try {
+            const res = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(submissionData),
+            });
+
+            const result = await res.json();
+            if (res.ok) {
+                alert('Message sent successfully!');
+            } else {
+                alert('Failed to send message.');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('An error occurred. Please try again.');
+        }
+
+        setIsSubmitting(false);
     };
 
     // Animation variants
@@ -99,7 +122,6 @@ const ContactPage = () => {
                         <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
                             Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
                         </p>
-
                     </motion.div>
                 </div>
             </div>
@@ -149,8 +171,6 @@ const ContactPage = () => {
                             <MapPin className="w-16 h-16 text-gray-400" />
                         </div>
                     </motion.div>
-
-
 
                     {/* Form */}
                     <motion.div
@@ -214,53 +234,20 @@ const ContactPage = () => {
                                     onChange={handleInputChange}
                                     required
                                     rows={6}
-                                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-600 focus:border-transparent transition-colors duration-200 resize-none"
+                                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-600 focus:border-transparent transition-colors duration-200"
                                 />
                             </div>
-                            <motion.button
+                            <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className={`w-full px-6 py-3 rounded-lg bg-violet-600 text-white font-medium 
-                  ${isSubmitting ? 'opacity-80' : 'hover:bg-violet-700'} 
-                  transition-colors duration-200 flex items-center justify-center space-x-2`}
+                                className="flex items-center justify-center w-full py-2 px-4 rounded-lg bg-violet-600 text-white font-semibold hover:bg-violet-700 transition duration-300"
                             >
-                                {isSubmitting ? (
-                                    <>
-                                        <Loader2 className="w-5 h-5 animate-spin" />
-                                        <span>Sending...</span>
-                                    </>
-                                ) : (
-                                    <>
-                                        <Send className="w-5 h-5" />
-                                        <span>Send Message</span>
-                                    </>
-                                )}
-                            </motion.button>
+                                {isSubmitting ? <Loader2 className="animate-spin mr-2" /> : <Send className="mr-2" />} Send Message
+                            </button>
                         </form>
                     </motion.div>
                 </div>
             </div>
-
-            {/* Success Dialog */}
-            {/* <AlertDialog open={showSuccess} onOpenChange={setShowSuccess}>
-                <AlertDialogContent>
-                    <AlertDialogHeader>
-                        <AlertDialogTitle>Message Sent Successfully!</AlertDialogTitle>
-                        <AlertDialogDescription>
-                            Thank you for contacting us. We'll get back to you as soon as possible.
-                        </AlertDialogDescription>
-                    </AlertDialogHeader>
-                    <AlertDialogFooter>
-                        <AlertDialogAction onClick={() => setShowSuccess(false)}>
-                            Close
-                        </AlertDialogAction>
-                    </AlertDialogFooter>
-                </AlertDialogContent>
-            </AlertDialog> */}
-
-
         </div>
     );
 };
